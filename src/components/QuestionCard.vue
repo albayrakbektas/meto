@@ -21,7 +21,10 @@
         </option>
       </select>
     </div>
-    <i class="fa-sharp fa-solid fa-circle-xmark abs-icon icon-right"></i>
+    <i
+      @click="deleteQuestion(question)"
+      class="fa-sharp fa-solid fa-circle-xmark abs-icon icon-right"
+    ></i>
   </div>
 </template>
 
@@ -38,12 +41,28 @@ export default {
       selected: "",
     };
   },
+  computed: {
+    questions: {
+      get() {
+        return this.$store.getters.getStateData("questions");
+      },
+      set(value) {
+        console.log(value);
+        this.$store.commit("setStateData", { data: "questions", value });
+      },
+    },
+  },
   methods: {
     dragStart(e) {
       console.log(e.clientY);
       this.$refs.draggable.addEventListener("dragstart", () => {
         console.log("dragged");
       });
+    },
+    deleteQuestion(question) {
+      const questionList = this.questions;
+      const index = questionList.indexOf(question);
+      questionList.splice(index, 1);
     },
   },
 };
@@ -67,6 +86,7 @@ export default {
 .abs-icon {
   position: absolute;
   top: 50%;
+  translate: 0 -50%;
   font-size: 1rem;
   cursor: pointer;
   color: #808080;
@@ -99,5 +119,16 @@ select {
   margin-top: 1rem;
   width: 100%;
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .question-form {
+    width: 94%;
+  }
+  .icon-left {
+    left: -7%;
+  }
+  .icon-right {
+    right: -7%;
+  }
 }
 </style>

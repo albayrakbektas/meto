@@ -2,7 +2,7 @@
   <div class="question-form draggable" ref="draggable">
     <i class="fa-solid fa-bars abs-icon icon-left"></i>
     <div class="question-form-header">
-      <LanguageOptions />
+      <CardLanguages :question="question" />
       <i class="fa-solid fa-pen" />
     </div>
     <div class="question">
@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import LanguageOptions from "@/components/LanguageOptions";
+import CardLanguages from "@/components/CardLanguages";
 export default {
   name: "QuestionCard",
-  components: { LanguageOptions },
+  components: { CardLanguages },
   props: {
     question: Object,
   },
@@ -47,18 +47,11 @@ export default {
         return this.$store.getters.getStateData("questions");
       },
       set(value) {
-        console.log(value);
         this.$store.commit("setStateData", { data: "questions", value });
       },
     },
   },
   methods: {
-    dragStart(e) {
-      console.log(e.clientY);
-      this.$refs.draggable.addEventListener("dragstart", () => {
-        console.log("dragged");
-      });
-    },
     deleteQuestion(question) {
       const questionList = this.questions;
       const index = questionList.indexOf(question);

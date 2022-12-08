@@ -30,7 +30,6 @@ export default {
         return this.$store.getters.getStateData("newQuestion").options;
       },
       set(value) {
-        console.log(value);
         this.$store.commit("setNewQuestion", { data: "options", value });
       },
     },
@@ -47,7 +46,6 @@ export default {
     deleteOption(option) {
       const optionId = option.id;
       this.optionsList = this.optionsList.filter((op) => {
-        console.log(op.id, optionId, op.id === optionId);
         return op.id !== optionId;
       });
     },

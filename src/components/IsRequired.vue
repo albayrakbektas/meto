@@ -38,7 +38,6 @@ export default {
         data: "isRequired",
         value: e.target.value,
       });
-      console.log(this.$store.state.newQuestion);
     },
   },
   watch: {},

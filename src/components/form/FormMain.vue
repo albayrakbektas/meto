@@ -98,4 +98,10 @@ export default {
 .languages {
   margin-bottom: 1rem;
 }
+@media (max-width: 500px) {
+  .form-main {
+    width: 90%;
+    margin: 2rem auto;
+  }
+}
 </style>

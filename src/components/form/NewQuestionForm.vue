@@ -151,4 +151,14 @@ input {
   width: 100%;
   padding: 0.4rem 0.6rem;
 }
+@media (max-width: 500px) {
+  .form-question-container {
+    overflow-y: scroll;
+  }
+  .form-container {
+    width: 90%;
+    translate: 0 0;
+    margin: 2rem auto;
+  }
+}
 </style>

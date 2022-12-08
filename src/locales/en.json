@@ -1,0 +1,14 @@
+{
+  "_FORM": {
+    "_HEADER": "Edit Form",
+    "_ADD_QUESTION": "Add Question",
+    "_ADD_FORM_INPUT": "Add Form Input",
+    "_SAVE_BUTTON": "Save",
+    "_CLOSE_BUTTON": "Close",
+    "_ADD_OPTION": "Add Option",
+    "select":
+    "{gender, select, male{He} female{She} other{They}} liked this.",
+    "number": "Current Percent: {current, number, percent}",
+    "time": "Current Time: {current, time, short}"
+  }
+}

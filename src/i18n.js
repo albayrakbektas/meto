@@ -1,13 +1,10 @@
-import store from "@/store";
+import Vue from "vue";
+import VueI18n from "vue-i18n";
+// import store from "@/store";
 
 Vue.use(VueI18n);
 
 // const locale = store.state.locale.value;
-
-import Vue from "vue";
-import VueI18n from "vue-i18n";
-
-Vue.use(VueI18n);
 
 function loadLocaleMessages() {
   const locales = require.context(

@@ -1,13 +1,15 @@
 <template>
-$END$
+  <h2>{{ $t("_FORM._HEADER") }}</h2>
 </template>
 
 <script>
 export default {
-name: "FormTitle"
-}
+  name: "FormTitle",
+};
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+h1 {
+  margin: 0;
+}
 </style>

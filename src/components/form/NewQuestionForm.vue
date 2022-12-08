@@ -4,7 +4,7 @@
       <FormRow :row-style="headerRowStyle">
         <IconSpan @icon-handler="closeForm" :button="iconSpan" />
       </FormRow>
-      <FormRow>
+      <FormRow class="form-center">
         <InputType />
         <IsRequired />
         <LanguageOptions />
@@ -33,7 +33,7 @@ import IsRequired from "@/components/IsRequired";
 import LanguageOptions from "@/components/LanguageOptions";
 import SelectOptions from "@/components/SelectOptions";
 export default {
-  name: "FormQuestion",
+  name: "NewQuestionForm",
   components: {
     SelectOptions,
     LanguageOptions,
@@ -68,6 +68,22 @@ export default {
         value: this.description,
       });
       this.$store.commit("updateQuestions", this.newQuestion);
+      this.$store.commit("setStateData", {
+        data: "isQuestionFormActive",
+        value: false,
+      });
+      this.$store.commit("setStateData", {
+        data: "newQuestion",
+        value: {
+          id: "",
+          inputType: "",
+          isRequired: null,
+          language: "",
+          title: "",
+          description: "",
+          options: [],
+        },
+      });
     },
   },
   data() {
@@ -83,6 +99,13 @@ export default {
         iconArea: "right",
         iconStyle: {
           cursor: "pointer",
+          border: "1px solid #808080",
+          borderRadius: "6px",
+          width: "1.4rem",
+          height: "1.4rem",
+          alignSelf: "center",
+          padding: "0.2rem",
+          writingMode: "vertical-lr",
         },
       },
       buttonsRowStyle: {
@@ -105,7 +128,7 @@ export default {
 
 <style scoped lang="scss">
 .form-question-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -115,12 +138,17 @@ export default {
 .form-container {
   width: 40%;
   margin: auto;
-  //translate: 0 100%;
+  translate: 0 10rem;
   border-radius: 6px;
   box-shadow: 0 0 5px #fff;
   background-color: #fff;
 }
+.form-center {
+  display: grid;
+  gap: 1rem;
+}
 input {
   width: 100%;
+  padding: 0.4rem 0.6rem;
 }
 </style>

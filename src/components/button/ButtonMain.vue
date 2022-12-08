@@ -21,7 +21,6 @@ export default {
 
 <style scoped lang="scss">
 .button-main {
-  box-sizing: border-box;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -35,6 +34,8 @@ export default {
   transition: all 0.4s ease-in-out;
   &:hover {
     border: 1px solid #006fff;
+    color: #fff;
+    background-color: #006fff;
   }
 }
 .active-button {

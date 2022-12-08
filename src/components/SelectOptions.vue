@@ -35,6 +35,16 @@ export default {
       index: 0,
     };
   },
+  computed: {
+    questions() {
+      return this.$store.getters.getStateData("questions");
+    },
+  },
+  watch: {
+    questions: function () {
+      this.optionsList = [];
+    },
+  },
   methods: {
     addOption() {
       this.optionsList.push({ id: this.index, value: "" });

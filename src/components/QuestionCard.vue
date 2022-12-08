@@ -41,6 +41,9 @@ export default {
       selected: "",
     };
   },
+  mounted() {
+    console.log(this.question);
+  },
   computed: {
     questions: {
       get() {
@@ -83,12 +86,19 @@ export default {
   font-size: 1rem;
   cursor: pointer;
   color: #808080;
+  transition: color 0.4s ease-in-out;
 }
 .icon-left {
   left: -5%;
+  &:hover {
+    color: #000000;
+  }
 }
 .icon-right {
   right: -5%;
+  &:hover {
+    color: #ff0000;
+  }
 }
 .fa-pen {
   cursor: pointer;

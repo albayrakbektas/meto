@@ -33,16 +33,12 @@ export default {
         this.$store.commit("setNewQuestion", { data: "options", value });
       },
     },
-  },
-  methods: {
-    addOption() {
-      this.optionsList.push({ id: this.index, value: "" });
-      this.index++;
-      this.$store.commit("setNewQuestion", {
-        data: "options",
-        value: this.optionsList,
-      });
+    questions() {
+      return this.$store.getters.getStateData("questions");
     },
+  },
+  watch: {},
+  methods: {
     deleteOption(option) {
       const optionId = option.id;
       this.optionsList = this.optionsList.filter((op) => {

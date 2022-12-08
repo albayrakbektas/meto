@@ -8,8 +8,8 @@
   >
     <QuestionCard
       class="handle"
-      :question="question"
       v-for="(question, index) of questionList"
+      :question="question"
       :key="(question.title || question.id) + index"
     />
   </draggable>

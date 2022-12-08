@@ -11,7 +11,7 @@
       </ButtonMain>
     </FormRow>
     <FormRow>
-      <ButtonMain :is-active="true">
+      <ButtonMain :is-active="true" :button-style="saveButtonStyle">
         <span> {{ $t("_FORM._SAVE_BUTTON") }}</span>
       </ButtonMain>
     </FormRow>
@@ -70,6 +70,10 @@ export default {
         margin: "auto",
         padding: "0.4rem 0.6rem",
       },
+      saveButtonStyle: {
+        fontSize: "1.2rem",
+        padding: "0.4rem 1.2rem",
+      },
     };
   },
   methods: {
@@ -93,7 +97,7 @@ export default {
   box-shadow: 0 0 5px #808080;
   border-radius: 6px;
   width: 80%;
-  margin: 10rem auto;
+  margin: 5rem auto;
 }
 .languages {
   margin-bottom: 1rem;

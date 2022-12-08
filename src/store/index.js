@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     locale: "TR",
     isQuestionFormActive: false,
+    optionList: [],
     newQuestion: {
       id: "",
       inputType: "",
@@ -34,6 +35,9 @@ export default new Vuex.Store({
     updateQuestions(state, payload) {
       state.questions.push(payload);
     },
+    updateOptionList(state, payload) {
+      state.optionList.push(payload);
+    },
   },
   actions: {
     setStateData: ({ commit }, payload) => {
@@ -44,6 +48,9 @@ export default new Vuex.Store({
     },
     updateQuestions: ({ commit }, payload) => {
       commit("updateQuestions", payload);
+    },
+    updateOptionList: ({ commit }, payload) => {
+      commit("updateOptionList", payload);
     },
   },
   modules: {},

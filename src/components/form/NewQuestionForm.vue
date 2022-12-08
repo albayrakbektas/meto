@@ -68,10 +68,8 @@ export default {
         value: this.description,
       });
       this.$store.commit("updateQuestions", this.newQuestion);
-      this.$store.commit("setStateData", {
-        data: "isQuestionFormActive",
-        value: false,
-      });
+      console.log(this.$store.state.newQuestion.options);
+      // this.$store.state.newQuestion.options = [];
       this.$store.commit("setStateData", {
         data: "newQuestion",
         value: {
@@ -84,8 +82,13 @@ export default {
           options: [],
         },
       });
+      console.log(this.$store.state.newQuestion.options);
       this.title = "";
       this.description = "";
+      this.$store.commit("setStateData", {
+        data: "isQuestionFormActive",
+        value: false,
+      });
     },
   },
   data() {

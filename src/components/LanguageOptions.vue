@@ -2,11 +2,16 @@
   <div class="language-options">
     <div
       class="languages"
-      v-for="(language, index) of getStateData"
+      v-for="(language, index) of getStateData.languages"
       :key="language + index"
+      :class="{ 'disabled-button': isQuestionCard }"
     >
       <ButtonMain
-        :is-active="activeLanguage(language)"
+        :is-active="
+          !isNewQuestion
+            ? activeLanguage(language)
+            : newQuestionLanguage(language)
+        "
         @button-handler="changeLanguage(language)"
         :button-style="buttonStyle"
       >
@@ -22,6 +27,11 @@ import i18n from "@/i18n";
 export default {
   name: "LanguageOptions",
   components: { ButtonMain },
+  props: {
+    question: Object,
+    isQuestionCard: Boolean,
+    isNewQuestion: Boolean,
+  },
   data() {
     return {
       isActive: null,
@@ -32,7 +42,10 @@ export default {
   },
   computed: {
     getStateData() {
-      return this.$store.getters.getStateData("languageOptions");
+      return {
+        languages: this.$store.getters.getStateData("languageOptions"),
+        newQuestion: this.$store.getters.getStateData("newQuestion"),
+      };
     },
     getLocaleLanguage() {
       return this.$store.getters.getStateData("locale");
@@ -40,13 +53,26 @@ export default {
     activeLanguage() {
       return (language) => language === i18n.locale;
     },
+    newQuestionLanguage() {
+      return (language) => {
+        if (!this.getStateData.newQuestion.language) {
+          return language === i18n.locale;
+        } else {
+          return language === this.getStateData.newQuestion.language;
+        }
+      };
+    },
   },
   methods: {
     changeLanguage(language) {
-      i18n.locale = language;
-      // const payload = { data: "locale", value: language };
-      // this.$store.commit("setStateData", payload);
-      // console.log(this.$store.state.locale);
+      if (!this.isNewQuestion) {
+        i18n.locale = language;
+      } else {
+        this.$store.commit("setNewQuestion", {
+          data: "language",
+          value: language,
+        });
+      }
     },
   },
 };
@@ -58,5 +84,8 @@ export default {
 }
 .languages {
   margin-right: 0.2rem;
+}
+.disabled-button {
+  pointer-events: none;
 }
 </style>

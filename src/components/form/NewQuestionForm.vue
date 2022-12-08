@@ -7,7 +7,7 @@
       <FormRow class="form-center">
         <InputType />
         <IsRequired />
-        <LanguageOptions />
+        <LanguageOptions :is-new-question="true" />
         <input placeholder="What is your gender" v-model="title" />
         <input placeholder="Description" v-model="description" />
         <SelectOptions />
@@ -84,6 +84,8 @@ export default {
           options: [],
         },
       });
+      this.title = "";
+      this.description = "";
     },
   },
   data() {

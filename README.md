@@ -1,5 +1,11 @@
 # meto-crm
 
+# Libraries
+### uuid
+### vue-i18n
+### vuedraggable
+
+
 ## Project setup
 ```
 npm install

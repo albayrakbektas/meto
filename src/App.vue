@@ -12,6 +12,12 @@ export default {
   data() {
     return {};
   },
+  created() {
+    window.addEventListener("message", (data) => {
+      alert(data);
+      console.log("vue-data: " + data);
+    });
+  },
 };
 </script>
 

@@ -16,15 +16,15 @@
   </head>
   <body>
     <script type="text/javascript">
-      window.addEventListener("message", (data) => {
-        alert(data);
-        alert("vue-listener");
-        console.log("vue-listener");
-      });
-      document.addEventListener("message", (data) => {
-        console.log("event");
-        alert(data);
-      });
+      // window.addEventListener("message", (data) => {
+      //   alert(data);
+      //   alert("vue-listener");
+      //   console.log("vue-listener");
+      // });
+      // document.addEventListener("message", (data) => {
+      //   console.log("event");
+      //   alert(data);
+      // });
       Print.postMessage("Hello World being called from Javascript code");
     </script>
     <noscript>

@@ -18,10 +18,10 @@ export default {
       alert(data);
       console.log("vue-listener");
     });
-    document.addEventListener("message", (data) => {
-      console.log("vue-listener-doc");
-      alert(data);
-    });
+    // document.addEventListener("message", (data) => {
+    //   console.log("vue-listener-doc");
+    //   alert(data);
+    // });
     // window.addEventListener("message", (data) => {
     //   alert(data);
     //   alert("after alert data");

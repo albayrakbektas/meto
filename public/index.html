@@ -11,9 +11,11 @@
   <body>
   <script type='text/javascript'>
     window.addEventListener("message", () => {
+      print("vue=listener");
+      alert("vue-listener");
       console.log("vue-listener");
     })
-    Print.postMessage('Hello World being called from Javascript code');
+    Flutter.postMessage('Hello World being called from Javascript code');
   </script>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>

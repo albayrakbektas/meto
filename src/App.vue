@@ -13,11 +13,11 @@ export default {
     return {};
   },
   created() {
-    window.addEventListener("message", (data) => {
-      alert("vue-listener-win");
-      alert(data);
-      console.log("vue-listener");
-    });
+    // window.addEventListener("message", (data) => {
+    //   alert("vue-listener-win");
+    //   alert(data);
+    //   console.log("vue-listener");
+    // });
     // document.addEventListener("message", (data) => {
     //   console.log("vue-listener-doc");
     //   alert(data);

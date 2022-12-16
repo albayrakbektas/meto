@@ -20,6 +20,7 @@ export default {
       print("vue-data: " + data);
       console.log("vue-data: " + data);
     });
+    window.addEventListener("message", () => {});
   },
 };
 </script>

@@ -15,6 +15,9 @@ export default {
   created() {
     window.addEventListener("message", (data) => {
       alert(data);
+      alert("after alert data");
+      alert("after alert data" + data);
+      print("vue-data: " + data);
       console.log("vue-data: " + data);
     });
   },

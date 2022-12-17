@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <FormMain />
-    <AlertBox :is-alert="isAlert" />
+    <AlertBox :is-alert="isAlert" :user="user" />
   </div>
 </template>
 

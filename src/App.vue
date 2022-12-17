@@ -1,31 +1,24 @@
 <template>
   <div id="app">
     <FormMain />
-    <AlertBox :is-alert="isAlert" :user="user" />
   </div>
 </template>
 
 <script>
 import FormMain from "@/components/form/FormMain";
-import AlertBox from "@/components/metocrm-test/AlertBox.vue";
 export default {
   name: "App",
-  components: { AlertBox, FormMain },
+  components: { FormMain },
   data() {
     return {
       isAlert: false,
-      user: {},
     };
   },
   created() {
     window.addEventListener("message", (event) => {
-      const { playerId, userAgent, webViewUserAgent } = event.data;
-      this.user = event.data;
-      this.isAlert = true;
-      console.log("eventData: " + { playerId, userAgent, webViewUserAgent });
-      // alert(event.data);
-      // alert("vue-listener");
-      // console.log("vue-listener: " + event.data + JSON.stringify(event.data));
+      alert(event.data);
+      alert("vue-listener");
+      console.log("vue-listener: " + event.data + JSON.stringify(event.data));
     });
     // eslint-disable-next-line no-undef
     Print.postMessage("Hello World being called from Javascript code");

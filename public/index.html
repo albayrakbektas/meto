@@ -19,7 +19,7 @@
       window.addEventListener("message", (data) => {
         alert(data);
         alert("vue-listener");
-        console.log("vue-listener: " + JSON.stringify(data.message));
+        console.log("vue-listener: " + data + JSON.stringify(data.data));
       });
       Print.postMessage("Hello World being called from Javascript code");
     </script>

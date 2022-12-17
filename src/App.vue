@@ -12,7 +12,17 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  created() {
+    window.addEventListener("message", (event) => {
+      const { playerId, userAgent, webViewUserAgent } = event.data;
+      console.log("eventData: " + { playerId, userAgent, webViewUserAgent });
+      alert(event.data);
+      alert("vue-listener");
+      console.log("vue-listener: " + event.data + JSON.stringify(event.data));
+    });
+    // eslint-disable-next-line no-undef
+    Print.postMessage("Hello World being called from Javascript code");
+  },
 };
 </script>
 

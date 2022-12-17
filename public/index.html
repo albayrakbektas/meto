@@ -15,14 +15,16 @@
     />
   </head>
   <body>
-    <script type="text/javascript">
-      window.addEventListener("message", (event) => {
-        alert(event.data);
-        alert("vue-listener");
-        console.log("vue-listener: " + event.data + JSON.stringify(event.data));
-      });
-      Print.postMessage("Hello World being called from Javascript code");
-    </script>
+<!--    <script type="text/javascript">-->
+<!--      window.addEventListener("message", (event) => {-->
+<!--        const { playerId, userAgent, webViewUserAgent } = event.data-->
+
+<!--        alert(playerId);-->
+<!--        alert("vue-listener");-->
+<!--        console.log("vue-listener: " + event.data + JSON.stringify(event.data));-->
+<!--      });-->
+<!--      Print.postMessage("Hello World being called from Javascript code");-->
+<!--    </script>-->
     <noscript>
       <strong
         >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work

@@ -12,25 +12,7 @@ export default {
   data() {
     return {};
   },
-  created() {
-    // window.addEventListener("message", (data) => {
-    //   alert("vue-listener-win");
-    //   alert(data);
-    //   console.log("vue-listener");
-    // });
-    // document.addEventListener("message", (data) => {
-    //   console.log("vue-listener-doc");
-    //   alert(data);
-    // });
-    // window.addEventListener("message", (data) => {
-    //   alert(data);
-    //   alert("after alert data");
-    //   alert("after alert data" + data);
-    //   print("vue-data: " + data);
-    //   console.log("vue-data: " + data);
-    // });
-    // window.addEventListener("message", () => {});
-  },
+  created() {},
 };
 </script>
 
